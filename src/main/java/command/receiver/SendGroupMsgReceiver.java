@@ -5,13 +5,14 @@ import java.io.OutputStream;
 import java.net.Socket;
 import java.util.Map;
 
+import pojo.Protocol;
 import command.BaseReceiver;
 
 public class SendGroupMsgReceiver extends BaseReceiver {
 
 	public SendGroupMsgReceiver(Map<String, Socket> connectedUsers,
-			InputStream in, OutputStream out) {
-		super(connectedUsers, in, out);
+			Protocol protocol, InputStream in, OutputStream out) {
+		super(connectedUsers, protocol, in, out);
 	}
 
 	@Override

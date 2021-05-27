@@ -5,13 +5,14 @@ import java.io.OutputStream;
 import java.net.Socket;
 import java.util.Map;
 
+import pojo.Protocol;
 import command.BaseReceiver;
 
 public class LoginReceiver extends BaseReceiver {
 
-	public LoginReceiver(Map<String, Socket> connectedUsers,
+	public LoginReceiver(Map<String, Socket> connectedUsers, Protocol protocol,
 			InputStream in, OutputStream out) {
-		super(connectedUsers, in, out);
+		super(connectedUsers, protocol, in, out);
 	}
 
 	@Override

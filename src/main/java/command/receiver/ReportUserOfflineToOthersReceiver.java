@@ -5,13 +5,15 @@ import java.io.OutputStream;
 import java.net.Socket;
 import java.util.Map;
 
+import pojo.Protocol;
 import command.BaseReceiver;
 
 public class ReportUserOfflineToOthersReceiver extends BaseReceiver {
 
 	public ReportUserOfflineToOthersReceiver(
-			Map<String, Socket> connectedUsers, InputStream in, OutputStream out) {
-		super(connectedUsers, in, out);
+			Map<String, Socket> connectedUsers, Protocol protocol,
+			InputStream in, OutputStream out) {
+		super(connectedUsers, protocol, in, out);
 	}
 
 	@Override
