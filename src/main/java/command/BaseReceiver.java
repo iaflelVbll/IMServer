@@ -1,5 +1,6 @@
 package command;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
@@ -23,5 +24,5 @@ public abstract class BaseReceiver {
 		this.out = out;
 	}
 
-	public abstract StringBuilder action();
+	public abstract StringBuilder action() throws IOException;
 }

@@ -8,9 +8,9 @@ import java.util.Map;
 import pojo.Protocol;
 import command.BaseReceiver;
 
-public class ReportLoginSuccessToNewUserReceiver extends BaseReceiver {
+public class ReportToOtherUsersReceiver extends BaseReceiver {
 
-	public ReportLoginSuccessToNewUserReceiver(
+	public ReportToOtherUsersReceiver(
 			Map<String, Socket> connectedUsers, Protocol protocol,
 			InputStream in, OutputStream out) {
 		super(connectedUsers, protocol, in, out);

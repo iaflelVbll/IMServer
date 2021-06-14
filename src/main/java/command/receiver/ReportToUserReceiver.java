@@ -10,18 +10,16 @@ import java.util.Map;
 import pojo.Protocol;
 import command.BaseReceiver;
 
-public class SendPrivateMsgReceiver extends BaseReceiver {
+public class ReportToUserReceiver extends BaseReceiver {
 
-	public SendPrivateMsgReceiver(Map<String, Socket> connectedUsers,
+	public ReportToUserReceiver(Map<String, Socket> connectedUsers,
 			Protocol protocol, InputStream in, OutputStream out) {
 		super(connectedUsers, protocol, in, out);
 	}
 
 	@Override
 	public StringBuilder action() throws IOException {
-		Socket msgReceiverSocket = connectedUsers.get(protocol.getTo());
-		OutputStream msgReceiverOut = msgReceiverSocket.getOutputStream();
-		ObjectOutputStream objOut = new ObjectOutputStream(msgReceiverOut);
+		ObjectOutputStream objOut = new ObjectOutputStream(out);
 		objOut.writeObject(protocol);
 		return null;
 	}

@@ -1,5 +1,7 @@
 package command.impl;
 
+import java.io.IOException;
+
 import command.BaseReceiver;
 import command.Command;
 
@@ -11,7 +13,7 @@ public class ConcreteCommand implements Command {
 		this.receiver = receiver;
 	}
 
-	public StringBuilder execute() {
+	public StringBuilder execute() throws IOException {
 		return receiver.action();
 	}
 	
